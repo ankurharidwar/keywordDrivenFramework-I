@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Vdopia_Automation]">
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="ReRun" value="No"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="AdServe">
+    <classes>
+      <class name="projects.TestSuiteClass"/>
+      <class name="projects.e2etest.LaunchE2ETest"/>
+    </classes>
+  </test> <!-- AdServe -->
+  <test name="AdServe(failed)">
+    <classes>
+      <class name="projects.TestSuiteClass">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- projects.TestSuiteClass -->
+      <class name="projects.e2etest.LaunchE2ETest">
+        <methods>
+          <include name="launchTest"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- projects.e2etest.LaunchE2ETest -->
+    </classes>
+  </test> <!-- AdServe(failed) -->
+</suite> <!-- Failed suite [Vdopia_Automation] -->

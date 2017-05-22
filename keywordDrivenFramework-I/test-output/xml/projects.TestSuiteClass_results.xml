@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AdServe"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="1"
+           time="0.000">
+  <properties />
+            <testcase name="beforeSuite" time="0.000" classname="projects.TestSuiteClass">
+                <failure type="org.testng.TestNGException"
+                  message="
+Parameter &apos;logFileLocation&apos; is required by @Configuration on method beforeSuite but has not been marked @Optional or defined
+in /Users/Pankaj/Desktop/qaAutomation/qascripting/Vdopia_Automation/exe/testng_gui.xml"
+              >
+<![CDATA[org.testng.TestNGException: 
+Parameter 'logFileLocation' is required by @Configuration on method beforeSuite but has not been marked @Optional or defined
+in /Users/Pankaj/Desktop/qaAutomation/qascripting/Vdopia_Automation/exe/testng_gui.xml
+  org.testng.internal.Parameters.createParameters(Parameters.java:154)
+  org.testng.internal.Parameters.createParameters(Parameters.java:361)
+  org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+  org.testng.TestNG.run(TestNG.java:1064)
+  org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="afterSuite" time="0.0" classname="projects.TestSuiteClass">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

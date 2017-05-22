@@ -1,0 +1,45 @@
+<project name="Vdopia Automation Test" default="test" basedir=".">
+	<!-- Define <testng> task -->
+	<taskdef name="testng" classname="org.testng.TestNGAntTask">
+		<classpath>
+			<pathelement location="ext_jars/testng-6.9.10.jar" />
+		</classpath>
+	</taskdef>
+	<property name="testdir" location="bin" />
+	<property name="srcdir" location="src" />
+	<property name="libdir" location="ext_jars" />
+	<property name="full-compile" value="true" />
+	<path id="classpath.base" />
+	<path id="classpath.test">
+		<!-- Including selendroid jar to be complied at first -->
+		<fileset dir="${libdir}">
+			<include name="**/*selendroid*.jar" />
+		</fileset>
+		<fileset dir="${libdir}">
+			<include name="**/selenium*.jar" />
+		</fileset>
+		<fileset dir="${libdir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${testdir}" />
+		<pathelement location="${srcdir}" />
+		<path refid="classpath.base" />
+	</path>
+	<target name="clean">
+		<delete verbose="${full-compile}">
+			<fileset dir="${testdir}" includes="**/*.class" />
+		</delete>
+	</target>
+	<target name="compile" depends="clean">
+		<javac srcdir="${srcdir}" destdir="${testdir}" verbose="${full-compile}">
+			<classpath refid="classpath.test" />
+		</javac>
+	</target>
+	<target name="test" depends="compile">
+		<testng outputdir="${testdir}" classpathref="classpath.test">
+			<!-- <xmlfileset dir="${srcdir}" includes="testng.xml"/> -->
+			<xmlfileset dir="exe" includes="testng_gui.xml" />
+			<!--<xmlfileset dir="exe" includes="testng_portal_check_PasswordChange.xml"/> -->
+		</testng>
+	</target>
+</project>
