@@ -1,4 +1,4 @@
-<project name="Vdopia Automation Test" default="test" basedir=".">
+<project name="Automation Test" default="test" basedir=".">
 	<!-- Define <testng> task -->
 	<taskdef name="testng" classname="org.testng.TestNGAntTask">
 		<classpath>
